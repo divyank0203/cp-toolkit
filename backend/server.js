@@ -17,6 +17,10 @@ app.use(compression());
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.get('/', async (req, res)=> {
+  res.send('Welcome to the Algorithm Learning Platform API');
+})
+
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/algorithms', require('./routes/algorithms'));
 app.use('/api/problems', require('./routes/problems'));
